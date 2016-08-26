@@ -1,0 +1,67 @@
+.sel-option {
+    display: none;
+}
+.changelang {
+    float: right;
+}
+.changelang a, .changelang a:visited {
+    color: #333333;
+	text-decoration: none;
+}
+.changelang a:hover, .changelang a:active {
+    color: #000000;
+}
+.changelang .active {
+    font-weight: bold;
+	text-decoration: underline;
+}
+.goodssmallblock {
+    min-height: 377px;
+	max-height: 377px;
+	height: 377px;
+}
+.object p {
+    min-height: 70px;
+	max-height: 70px;
+	height: 70px;
+	margin-bottom: 5px;
+}
+.goodssmallblock h2, .goodssmallblock img {
+    cursor: pointer;
+}
+.lnspacer {
+    min-height: 72px;
+	max-height: 72px;
+	height: 72px;
+	margin: 5px auto;
+}
+.modal .container {
+	padding-bottom: 20px;
+}
+.pool-hidden-content, .pool-hidden-results {
+    display: none;
+}
+.numberinput {
+    width: 64px;
+	padding: 5px;
+}
+.whitebg .container {
+    background: #FFFFFF !important;
+}
+.langnotify {
+    border: 1px solid rgba(0,200,0,0.5);
+	background: rgba(0,255,0,0.15);
+	color: rgba(0,200,0,0.8);
+	padding: 5px;
+	margin: 5px auto;
+}
+.top-pic img {
+    max-width: 340px;
+}
+.oth-pic-wrapper {
+    height: 100px;
+}
+.oth-pic img {
+    padding: 5px;
+	background: #FFFFFF;
+}
