@@ -9,9 +9,9 @@
 
 $db = array(
     'main' => array(
-	    'host' => 'pk-mayak.mysql',
-		'user' => 'pk-mayak_mysql',
-		'pass' => 'o5STf-re',
+	    'host' => '127.0.0.1',
+		'user' => 'root',
+		'pass' => '',
 		'name' => 'pk-mayak_db'
 	),
     'other' => array(
