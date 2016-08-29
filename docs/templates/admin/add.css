@@ -1,0 +1,156 @@
+.alert {
+	opacity: 0.7;
+	display: none;
+	text-align: center;
+}
+.socialicons {
+	text-align: center !important;
+}
+.socialicons a {
+	display: inline-block !important;
+	padding: 10px !important;
+	margin: 0 auto !important;
+}
+.servertablegame {
+	width: 30px;
+}
+.servertablegame img {
+	width: 16px;
+	height: 16px;
+	float: left;
+	margin: 2px 5px 0px 0px;
+}
+.adminpagination {
+	margin: 5px auto;
+	text-align: center;
+}
+.adminpagination button i, .adminpagination button{
+	font-weight: bold;
+}
+.create_button {
+	float: right;
+}
+.table thead tr th:last-child, .table tbody tr td:last-child {
+	width: 100px;
+	text-align: center;
+}
+.minimap {
+	width: 40px;
+	height: 30px;
+	margin: 0px 5px 0px 0px;
+}
+.adminservers tbody tr td {
+	vertical-align: center !important;
+}
+#page-wrapper {
+	margin: 0 auto;
+}
+.navbar-header button {
+	display: none !important;
+}
+.pickmeup-twitter-bootstrap {
+	z-index: 999999;
+}
+.teamicon {
+	width: 24px;
+	height: 24px;
+	float: right;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.teamicon:hover {
+	cursor: pointer;
+}
+.teamiconuploadform {
+	display: none;
+}
+.smallteamicon {
+	margin: 2.5px 5px 5px 5px;
+	width: 16px;
+	height: 16px;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.admspoiler {
+	display: none;
+	opacity: 0.5;
+}
+.newpayments {
+	position: absolute;
+	background: #FF0000;
+	border: 1px solid #AA0000;
+	color: #FFFFFF;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	z-index: 5;
+	font-size: 10px;
+	padding: 2px 5px 2px 5px;
+	text-align: center;
+	margin-top: 32px;
+	margin-left: 32px;
+}
+.uploadgoodphoto form, .changesitelogo form, .uploadposter form {
+    display: none;
+}
+.changesitelogo img, .uploadposter img {
+    opacity: 0.7;
+	cursor: pointer;
+	min-width: 186px;
+	max-width: 186px;
+	width: 186px;
+}
+.goodphotos .goodposterm {
+    display: inline-block;
+	padding: 5px;
+    min-width: 110px;
+	max-width: 110px;
+	width: 110px;
+}
+.uploadgoodphoto .goodphotos img {
+    min-width: 100px;
+	max-width: 100px;
+	width: 100px;
+	display: block;
+	margin: 0 auto;
+}
+.uploadgoodphoto .goodphotos .goodposterm .goodposterdel, .skispriceblock .btn-danger, .addgoodphotolink, #skispricesumm, #addpoolanswer, .pabg .pabgr {
+	float: right;
+}
+.uploadposter img {
+    display: block;
+	margin: 0 auto;
+}
+#pool_answers_add .skispriceblock {
+    padding: 5px;
+	margin: 5px auto;
+	background: #EEEEEE;
+	border: 1px solid #DDDDDD;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.pabg {
+    margin: 5px;
+	padding: 5px;
+	border: 1px solid #000000;
+	color: #FFFFFF;
+}
+.poolan {
+    padding: 5px;
+	margin: 5px auto;
+	width: 90%;
+	background: #EFEFEF;
+	border: 1px solid #DDDDDD;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+#skisprice .skispriceblock .btn-danger {
+    margin-right: -30px !important;
+	margin-top: 30px;
+}
