@@ -22,6 +22,11 @@ $(document).ready(function(){
             case '0':
                   console.log('hide');
                 $("#material-boxes").hide();
+                 $("#option1").prop("checked", true);
+                $("#option1").prop("value", '');
+                  $("#option1").prop("checked", false);
+                  $("#option2").prop("value", '');
+                   
               break;
             case '1':
                  console.log('show');
