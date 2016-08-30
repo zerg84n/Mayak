@@ -29,7 +29,7 @@ $(document).ready(function(){
                    
               break;
             case '1':
-                 console.log('show1');
+                 console.log('show');
                  $("#option1").prop("value", 'С пяткой');
                   $("#label-option1").html( 'С пяткой');
                   $("#option2").prop("value", 'Без пятки');
