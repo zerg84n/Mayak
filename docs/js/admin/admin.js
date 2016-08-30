@@ -1,4 +1,48 @@
 $(document).ready(function(){
+    $(".material-box").change(function(){
+        
+            //console.log("check");
+            var valid = false;
+                $( ".material-box" ).each(function( index ) {
+                
+          console.log( index + ": " + $( this ).prop('checked') );
+          if ($( this ).prop('checked')){ valid = true; }
+        });
+        
+        if (!valid){  
+                        alert("Вы не выбрали материал");
+                        console.log( $("#option1").prop('checked'));
+                       $("#option1").prop("checked", true);
+                }
+    });
+    $("#category-box").change(function(){
+        var category = $("#category-box :selected").val();
+         console.log();
+         switch (category) {
+            case '0':
+                  console.log('hide');
+                $("#material-boxes").hide();
+              break;
+            case '1':
+                 console.log('show');
+                 $("#option1").prop("value", 'С пяткой');
+                  $("#label-option1").html( 'С пяткой');
+                  $("#option2").prop("value", 'Без пятки');
+                   $("#label-option2").html('Без пятки');
+                $("#material-boxes").show();
+              break;
+            case '2':
+                 console.log('show');
+                 $("#option1").prop("value", 'Дерево');
+                  $("#label-option1").html( 'Дерево');
+                  $("#option2").prop("value", 'Деревопластик');
+                   $("#label-option2").html( 'Деревопластик');
+              $("#material-boxes").show();
+              break;
+            default:
+              alert( 'Я таких значений не знаю' );
+            }
+    });
     var loc = window.location.href.split("/");
     var priceblock = '<div class="col-lg-12 skispriceblock"><button type="button" class="btn btn-danger btn-xs" onclick="delblock(this);"><i class="fa fa-times"></i></button><div class="col-lg-4 form-group"><label>Ростовка</label><input class="form-control" type="text" name="rostovka" /></div><div class="col-lg-4 form-group"><label>Ширина</label><input class="form-control" type="text" name="width" /></div><div class="col-lg-4 form-group"><label>Цена</label><input class="form-control" type="text" name="price" /></div></div>';
 	var poolablock = '<div class="skispriceblock"><button type="button" class="btn btn-danger btn-xs" onclick="delblock(this);"><i class="fa fa-times"></i></button><div class="form-group"><label>На русском</label><input class="form-control" type="text" name="answers_ru" /></div><div class="form-group"><label>На английском</label><input class="form-control" type="text" name="answers_en" /></div></div>';
@@ -150,6 +194,7 @@ $(document).ready(function(){
 	$('.showhide').click(function() {if(confirm('Подтвердите действие')) go_ajax([{'name': 'action', 'value': 'item-visible'}, {'name': 'item', 'value': $(this).attr('data-id')}], "none");});
 	$('.positem').click(function() {go_ajax([{'name': 'action', 'value': 'item-pos'}, {'name': 'item', 'value': $(this).attr('data-id')}], "none");});
 	$('.create_button').click(function() {
+               
 		$('#' + loc[4] + '-form')[0].reset();
 		$('#' + loc[4] + '-form input[name=action]').val('item-create');
 		$('#scorebutton').val('Неизвестно');
@@ -203,9 +248,21 @@ $(document).ready(function(){
 			data: 'action=item-editinfo&table=' + tbl + '&item=' + id,
 			success: function(data) {
 				var it = $.parseJSON(data);
+                                console.log(data);
+                                 
+                                   $('#option1').prop("checked", false);
+                                  
+                                   $('#option2').prop("checked", false); 
+                                   //option3 ...
 				$.each(it, function(i, item) {
+                                       
 					$('#form input[name=' + item.name + ']').val(item.value);
 					if(item.name == 'metacontent') $('textarea[name=' + item.name + ']').val(item.value);
+                                        //To add options add  option3 ...
+                                        if(item.name == 'option1' ) $('#option1').prop("checked", item.value);
+                                        if(item.name == 'option2') $('#option2').prop("checked", item.value);
+                                        //Set selected category
+                                        if (item.name == 'category')  $("div.cat-sel select").val(item.value);
 					if(item.name == 'description_ru') tinyMCE.get('textarea-description').setContent(unescapeHtml(item.value));
 					if(item.name == 'description_en') tinyMCE.get('textarea-description2').setContent(unescapeHtml(item.value));
 					if(item.name == 'poster') $('.uploadposter img').attr('src', '/documents/' + tbl2 + '/' + item.value);
@@ -305,6 +362,7 @@ $(document).ready(function(){
 						}
 					};
 				});
+                                
 				if(typeof($('#form input[name=item]')) === "undefined") $('#' + loc[4] + '-form').append('<input type="hidden" name="item" />');
 				$('#form input[name=action]').val('item-update');
 				$('#form input[name=item]').val(id);

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2016-01-28 22:58:24
+<?php /* Smarty version Smarty-3.1.6, created on 2016-08-29 17:21:45
          compiled from "../views/frontend\item.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15619567a9c7b0991b4-06017932%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '478efe1e31930db22c14128ca36184156ba2fc8e' => 
     array (
       0 => '../views/frontend\\item.tpl',
-      1 => 1454000260,
+      1 => 1472206848,
       2 => 'file',
     ),
   ),
@@ -27,6 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'key' => 0,
     'r' => 0,
     'similar' => 0,
+    'cur_cat' => 0,
     'sim' => 0,
   ),
   'has_nocache_code' => false,
@@ -92,7 +93,7 @@ $_smarty_tpl->tpl_vars['photo']->_loop = true;
 " />
 				    <?php if ($_smarty_tpl->tpl_vars['good']->value['cat']=='goods_cat1'){?>
                         <div class="topic-settings">
-                            <div class="col-md-offset-3 col-md-3 col-xs-12 col-sm-7 set-left">
+                            <div class="col-md-offset-2 col-md-4 col-xs-12 col-sm-7 set-left">
 						        <?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?>
                                     <div class="rostovka select sel-menu sel-item">
                                         <div class="sel-select">
@@ -118,7 +119,7 @@ $_smarty_tpl->tpl_vars['r']->_loop = true;
 " data-txt="<?php echo $_smarty_tpl->tpl_vars['r']->value;?>
 см" data-rostovka="<?php echo $_smarty_tpl->tpl_vars['r']->value;?>
 " data-width="<?php echo $_smarty_tpl->tpl_vars['good']->value['width'][$_smarty_tpl->tpl_vars['key']->value];?>
-" data-price="<?php echo $_smarty_tpl->tpl_vars['good']->value['width'][$_smarty_tpl->tpl_vars['key']->value];?>
+" data-price="<?php echo $_smarty_tpl->tpl_vars['good']->value['price'][$_smarty_tpl->tpl_vars['key']->value];?>
 "><?php echo $_smarty_tpl->tpl_vars['r']->value;?>
 см</h4>
                                                     </li>
@@ -282,19 +283,28 @@ foreach ($_from as $_smarty_tpl->tpl_vars['sim']->key => $_smarty_tpl->tpl_vars[
 $_smarty_tpl->tpl_vars['sim']->_loop = true;
 ?>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                       <div class="object">
-                            <h2><?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?><?php echo $_smarty_tpl->tpl_vars['sim']->value['title_ru'];?>
+                       <div class="object goodssmallblock">
+                            <a href="/catalogue/<?php echo $_smarty_tpl->tpl_vars['cur_cat']->value;?>
+/item/<?php echo $_smarty_tpl->tpl_vars['sim']->value['id'];?>
+/"><h2><?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?><?php echo $_smarty_tpl->tpl_vars['sim']->value['title_ru'];?>
 <?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['sim']->value['title_en'];?>
-<?php }?></h2>
-                            <img src="<?php echo $_smarty_tpl->tpl_vars['templateWebPath']->value;?>
-images/object.png" alt=""/>
-                            <?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?><?php echo $_smarty_tpl->tpl_vars['sim']->value['small_description_ru'];?>
-<?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['sim']->value['small_description_en'];?>
-<?php }?>
+<?php }?></h2></a>
+                            <img src="/documents/goods/<?php echo $_smarty_tpl->tpl_vars['photodir']->value;?>
+/m/<?php echo $_smarty_tpl->tpl_vars['sim']->value['poster'];?>
+" alt="" onclick="document.location.href = '/catalogue/<?php echo $_smarty_tpl->tpl_vars['cur_cat']->value;?>
+/item/<?php echo $_smarty_tpl->tpl_vars['sim']->value['id'];?>
+/';"/>
+                            </p>
+                            <?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?><p><?php echo $_smarty_tpl->tpl_vars['sim']->value['small_description_ru'];?>
+</p><?php }else{ ?><p><?php echo $_smarty_tpl->tpl_vars['sim']->value['small_description_en'];?>
+</p><?php }?>
                             <div class="obj-cost">
-                                <h3><?php echo $_smarty_tpl->tpl_vars['sim']->value['price'];?>
- <?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?>Р<?php }else{ ?>R<?php }?></h3>
-                                <button type="button" class="btn btn-info"><?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?>КУПИТЬ<?php }else{ ?>BUY<?php }?></button>
+                                <h3><?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?>от <?php echo $_smarty_tpl->tpl_vars['sim']->value['price'];?>
+ Р<?php }else{ ?>at <?php echo $_smarty_tpl->tpl_vars['sim']->value['price'];?>
+ R<?php }?></h3>
+                                <button type="button" class="btn btn-info" onclick="document.location.href = '/catalogue/<?php echo $_smarty_tpl->tpl_vars['cur_cat']->value;?>
+/item/<?php echo $_smarty_tpl->tpl_vars['sim']->value['id'];?>
+/';"><?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?>КУПИТЬ<?php }else{ ?>BUY<?php }?></button>
                             </div>
                         </div>
                     </div>

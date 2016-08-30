@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2016-01-26 17:16:59
+<?php /* Smarty version Smarty-3.1.6, created on 2016-08-29 17:16:29
          compiled from "../views/frontend\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:28426563626d4c37243-24751857%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'ba3be6350b246607e642f74a48172fd9ae6a402a' => 
     array (
       0 => '../views/frontend\\index.tpl',
-      1 => 1453807018,
+      1 => 1472206848,
       2 => 'file',
     ),
   ),
@@ -35,7 +35,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_563626d5ebbb3')) {function content_563626d5ebbb3($_smarty_tpl) {?>        <div id="carousel" class="carousel slide">
+<?php if ($_valid && !is_callable('content_563626d5ebbb3')) {function content_563626d5ebbb3($_smarty_tpl) {?>        <div id="carousel" class="container carousel slide">
             <ol class="carousel-indicators">
                 <?php  $_smarty_tpl->tpl_vars['slide'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['slide']->_loop = false;
  $_smarty_tpl->tpl_vars['k'] = new Smarty_Variable;

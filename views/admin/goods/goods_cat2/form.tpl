@@ -37,7 +37,7 @@
                         <label>Описание</label>
                         <textarea id="textarea-description" class="form-control" rows="3" name="description_ru"></textarea>
                     </div>
-				    <h4>На англиском языке</h4>
+				    <h4>На английском языке</h4>
                     <div class="form-group">
                         <label>Название</label>
                         <input class="form-control" type="text" name="title_en" />

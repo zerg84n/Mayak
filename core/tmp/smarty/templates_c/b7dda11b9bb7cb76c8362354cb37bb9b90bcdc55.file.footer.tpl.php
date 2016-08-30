@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2016-01-31 17:53:26
+<?php /* Smarty version Smarty-3.1.6, created on 2016-08-29 17:16:29
          compiled from "../views/frontend\footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:65535624d3de8dd5c0-66031231%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'b7dda11b9bb7cb76c8362354cb37bb9b90bcdc55' => 
     array (
       0 => '../views/frontend\\footer.tpl',
-      1 => 1454241197,
+      1 => 1472206847,
       2 => 'file',
     ),
   ),
@@ -28,6 +28,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'menu' => 0,
     'menuitem' => 0,
     'templateWebPath' => 0,
+    'ss_sitename' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -72,6 +73,16 @@ $_smarty_tpl->tpl_vars['menuitem']->_loop = true;
                     <div class="footer-info">
                         <img src="<?php echo $_smarty_tpl->tpl_vars['templateWebPath']->value;?>
 images/icon-1.png" alt="">
+						<br />
+						<ul style="margin-top: 32px;">
+						    <li>
+						        <h2>Разработка сайта <a href="http://kovalevaleksey.ru/" target="_blank">Алексей Ковалев</a></h2>
+							</li>
+						    <li>
+						        <h2><a href="/"><?php echo $_smarty_tpl->tpl_vars['ss_sitename']->value;?>
+</a>, 2016 &copy;</h2>
+							</li>
+						</ul>
                     </div>
                     <div class="share">
                         <div id="ok_shareWidget"></div>
@@ -122,6 +133,16 @@ $_smarty_tpl->tpl_vars['menuitem']->_loop = true;
                     <div class="footer-info">
                         <img src="<?php echo $_smarty_tpl->tpl_vars['templateWebPath']->value;?>
 images/icon-1.png" alt="">
+						<br />
+						<ul style="margin-top: 32px;">
+						    <li>
+						        <h2>Developed by <a href="http://kovalevaleksey.ru/" target="_blank">Aleksey Kovalev</a></h2>
+						    </li>
+						    <li>
+						        <h2><a href="/"><?php echo $_smarty_tpl->tpl_vars['ss_sitename']->value;?>
+</a>, 2016 &copy;</h2>
+							</li>
+						</ul>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3 footer-share">

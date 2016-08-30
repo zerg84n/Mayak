@@ -37,13 +37,14 @@
 					<div id="skisprice" class="col-lg-12">
 					    <div class="col-lg-12 skispriceblock">
                             <div class="col-lg-4 form-group">
-                                <label>Ростовка</label>
+                                <label>Роостовка</label>
                                 <input class="form-control" type="text" name="rostovka" />
                             </div>
                             <div class="col-lg-4 form-group">
                                 <label>Ширина</label>
                                 <input class="form-control" type="text" name="width" />
                             </div>
+                                                      
                             <div class="col-lg-4 form-group">
                                 <label>Цена</label>
                                 <input class="form-control" type="text" name="price" />
@@ -54,6 +55,21 @@
 				<form id="goods-form">
 				<input id="goodphotos" type="hidden" name="photos" value="-" />
 				<input id="poster" type="hidden" name="poster" />
+                     <div class="form-group cat-sel">
+                    <label>Категория товара</label>
+                    <select id="category-box" class="form-control" name="category">
+                        <option value=2 selected>Лыжи</option>
+                        <option value=1>Крепления</option>
+                        <option value=0>Остальное</option>
+                       
+                    </select>
+                </div>
+                 <div class="form-group" id="material-boxes">
+                    <label>Материал</label><br/>
+                    <input id="option1" class="material-box" name="option1" value="Дерево" type="checkbox" checked><label id="label-option1" for="option1">Дерево</label>
+                    <input id="option2"  class="material-box" type="checkbox" name="option2" value="Деревопластик" checked><label id="label-option2" for="option2">Деревопластик</label>
+                </div>
+                                
                 <div class="form-group">
                     <label>Область применения</label>
                     <select class="form-control" name="obl">
