@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2016-01-28 18:32:57
+<?php /* Smarty version Smarty-3.1.6, created on 2016-08-30 21:24:04
          compiled from "../views/frontend\catalogue.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:25444564b4a36dafb96-23418797%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9ccd802290c4bbae0d04e563270369a12df29e39' => 
     array (
       0 => '../views/frontend\\catalogue.tpl',
-      1 => 1453806967,
+      1 => 1472206846,
       2 => 'file',
     ),
   ),
@@ -31,7 +31,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_564b4a3727a52')) {function content_564b4a3727a52($_smarty_tpl) {?></div>
-    <div class="bg">
+    <div class="bg catalog-page">
         <div class="container menu">
             <div class="navbar">
                 <div class="container catalog">
@@ -113,6 +113,7 @@ images/sel.png" alt="">
     
     <div class="container goods">
         <div class="row">
+		    <?php if (isset($_smarty_tpl->tpl_vars['goods']->value[0])){?>
 		    <?php  $_smarty_tpl->tpl_vars['good'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['good']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['goods']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['good']->key => $_smarty_tpl->tpl_vars['good']->value){
@@ -224,6 +225,16 @@ $_smarty_tpl->tpl_vars['page']->_loop = true;
                     </ul>
                 </div>
             </div>
+			<?php }else{ ?>
+                <div class="langnotify" style="color: #AA0000; border-color: #AA0000; background-color: rgba(255,0,0,0.15);">
+				    <i class="fa fa-warning"></i>
+			        <?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?>
+					    Не найдено ни одного товара в данной категории.
+				    <?php }else{ ?>
+					    No items found in this section.
+				    <?php }?>
+				</div>
+			<?php }?>
         </div>
     </div>
     

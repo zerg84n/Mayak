@@ -17,15 +17,15 @@ $(document).ready(function(){
     });
     $("#category-box").change(function(){
         var category = $("#category-box :selected").val();
-         console.log();
+        // console.log(category);
          switch (category) {
             case '0':
                   console.log('hide');
                 $("#material-boxes").hide();
                  $("#option1").prop("checked", true);
-                $("#option1").prop("value", '');
+                $("#option1").prop("value", 'empty');
                   $("#option1").prop("checked", false);
-                  $("#option2").prop("value", '');
+                  $("#option2").prop("value", 'empty');
                    
               break;
             case '1':
@@ -56,6 +56,8 @@ $(document).ready(function(){
 	} else {
 	    $('#' + loc[4]).addClass('active');
 	}
+        //Some shit-code here
+        
 	if(loc[4] == 'login') {
 	    $('form input').keyup(function(e) {if(e.keyCode == 13) $('form .btn-success').trigger('click');});
 		$('form .btn-success').click(function() {
@@ -243,6 +245,8 @@ $(document).ready(function(){
 	    $('#pool_answers_add').append(poolablock);
 	});
 	$('.editbutton').click(function() {
+                
+                 
 		$('#' + loc[4] + '-form')[0].reset();
 		var id = $(this).attr('data-id'), tbl = '', tbl2 = '', ok1 = 0;
 		loc[4] == 'goods' ? tbl = loc[5] : tbl = loc[4];
@@ -253,8 +257,8 @@ $(document).ready(function(){
 			data: 'action=item-editinfo&table=' + tbl + '&item=' + id,
 			success: function(data) {
 				var it = $.parseJSON(data);
-                                console.log(data);
-                                 
+                                //console.log(it);
+                                    
                                    $('#option1').prop("checked", false);
                                   
                                    $('#option2').prop("checked", false); 
@@ -264,10 +268,16 @@ $(document).ready(function(){
 					$('#form input[name=' + item.name + ']').val(item.value);
 					if(item.name == 'metacontent') $('textarea[name=' + item.name + ']').val(item.value);
                                         //To add options add  option3 ...
-                                        if(item.name == 'option1' ) $('#option1').prop("checked", item.value);
-                                        if(item.name == 'option2') $('#option2').prop("checked", item.value);
+                                        if(item.name == 'option1'  ) {
+                                            $('#option1').prop("checked", item.value);
+                                          
+                                        }
+                                        if(item.name == 'option2' ) {
+                                            $('#option2').prop("checked", item.value);
+                                           
+                                        }
                                         //Set selected category
-                                        if (item.name == 'category')  $("div.cat-sel select").val(item.value);
+                                        if (item.name == 'category')  {$("div.cat-sel select").val(item.value);  $("#category-box").change(); }
 					if(item.name == 'description_ru') tinyMCE.get('textarea-description').setContent(unescapeHtml(item.value));
 					if(item.name == 'description_en') tinyMCE.get('textarea-description2').setContent(unescapeHtml(item.value));
 					if(item.name == 'poster') $('.uploadposter img').attr('src', '/documents/' + tbl2 + '/' + item.value);
@@ -366,6 +376,7 @@ $(document).ready(function(){
 							parseInt(item.value,10) == 1 ? $('#checkbox-' + item.name).prop('checked', true) : $('#checkbox-' + item.name).prop('checked', false);
 						}
 					};
+                                     $("#category-box").change();   
 				});
                                 
 				if(typeof($('#form input[name=item]')) === "undefined") $('#' + loc[4] + '-form').append('<input type="hidden" name="item" />');
