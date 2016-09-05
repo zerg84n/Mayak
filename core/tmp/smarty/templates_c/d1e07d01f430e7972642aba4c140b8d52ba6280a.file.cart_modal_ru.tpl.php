@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2016-01-31 19:40:42
+<?php /* Smarty version Smarty-3.1.6, created on 2016-09-05 16:50:53
          compiled from "../views/frontend\cart_modal_ru.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:1479256aa0d7a0b81a2-02707557%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd1e07d01f430e7972642aba4c140b8d52ba6280a' => 
     array (
       0 => '../views/frontend\\cart_modal_ru.tpl',
-      1 => 1454247277,
+      1 => 1472816092,
       2 => 'file',
     ),
   ),
@@ -23,16 +23,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'templateWebPath' => 0,
     'transport' => 0,
     'tc' => 0,
-    'ss_legal_title' => 0,
-    'ss_legal_address' => 0,
-    'ss_address' => 0,
-    'ss_legal_inn' => 0,
-    'ss_legal_kpp' => 0,
-    'ss_legal_ogrn' => 0,
-    'ss_legal_okpo' => 0,
-    'ss_legal_check_acc' => 0,
-    'ss_legal_bik' => 0,
-    'ss_director_fio' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -63,7 +53,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             <hr>
                         </div>
                         <div class="m-def">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5"><h3>Подтверждение</h3></a>
+                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5" onclick="add_order_details();"><h3>Подтверждение</h3></a>
                         </div>
                     </div>
                     <div class="modal-bar modal-bar-tel">
@@ -84,7 +74,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             <hr>
                         </div>
                         <div class="m-def">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5"><h3>5</h3></a>
+                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5" onclick="add_order_details();"><h3>5</h3></a>
                         </div>
                     </div>
                     <div class="tab-pane registrat col-md-offset-2 col-md-8">
@@ -131,7 +121,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             <hr>
                         </div>
                         <div class="m-def">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5"><h3>Подтверждение</h3></a>
+                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5" onclick="add_order_details();"><h3>Подтверждение</h3></a>
                         </div>
                     </div>
                     <div class="modal-bar modal-bar-tel">
@@ -152,7 +142,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                             <hr>
                         </div>
                         <div class="m-def">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5"><h3>5</h3></a>
+                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5" onclick="add_order_details();"><h3>5</h3></a>
                         </div>
                     </div>
                     <div class="tab-pane registrat cart col-md-offset-2 col-md-9">
@@ -239,7 +229,7 @@ $_smarty_tpl->tpl_vars['tc']->_loop = true;
                             <hr>
                         </div>
                         <div class="m-def">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5"><h3>Подтверждение</h3></a>
+                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5" onclick="add_order_details();"><h3>Подтверждение</h3></a>
                         </div>
                     </div>
                     <div class="modal-bar modal-bar-tel">
@@ -260,7 +250,7 @@ $_smarty_tpl->tpl_vars['tc']->_loop = true;
                             <hr>
                         </div>
                         <div class="m-def">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5"><h3>5</h3></a>
+                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5" onclick="add_order_details();"><h3>5</h3></a>
                         </div>
                     </div>
                     <div class="tab-pane registrat cart col-md-offset-1 col-md-10">
@@ -313,7 +303,7 @@ $_smarty_tpl->tpl_vars['tc']->_loop = true;
                             <hr>
                         </div>
                         <div class="m-def">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5"><h3>Подтверждение</h3></a>
+                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5" onclick="add_order_details();"><h3>Подтверждение</h3></a>
                         </div>
                     </div>
                     <div class="modal-bar modal-bar-tel">
@@ -334,7 +324,7 @@ $_smarty_tpl->tpl_vars['tc']->_loop = true;
                             <hr>
                         </div>
                         <div class="m-def">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5"><h3>5</h3></a>
+                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5" onclick="add_order_details();"><h3>5</h3></a>
                         </div>
                     </div>
                     <div class="tab-pane registrat cart col-md-offset-1 col-md-10">
@@ -361,7 +351,7 @@ $_smarty_tpl->tpl_vars['tc']->_loop = true;
                     </div>
                     <div class="w-footer" style="text-align: center;">
 					    <button class="back-btn" type="button" data-dismiss="modal" data-toggle="modal" data-target="#modal-3" style="display: inline-block;">Назад</button>
-                        <button class="back-btn" type="button" data-dismiss="modal" data-toggle="modal" data-target="#modal-5" style="display: inline-block;">Далее</button>
+                        <button class="back-btn" type="button" data-dismiss="modal" data-toggle="modal" data-target="#modal-5" style="display: inline-block;" onclick="add_order_details();">Далее</button>
                     </div>
                 </div>
             </div>
@@ -395,7 +385,7 @@ $_smarty_tpl->tpl_vars['tc']->_loop = true;
                             <hr>
                         </div>
                         <div class="m-next">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5"><h3>Подтверждение</h3></a>
+                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5" onclick="add_order_details();"><h3>Подтверждение</h3></a>
                         </div>
                     </div>
                     <div class="modal-bar modal-bar-tel">
@@ -416,60 +406,44 @@ $_smarty_tpl->tpl_vars['tc']->_loop = true;
                             <hr>
                         </div>
                         <div class="m-next">
-                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5"><h3>5</h3></a>
+                            <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal-5" onclick="add_order_details();"><h3>5</h3></a>
                         </div>
                     </div>
                     <div class="requisite requisite-mod col-md-offset-1 col-md-10">
                         <ul>
-                            <li>
-                                <h3>Полное наименование</h3>
-                                <h3 class="h3-right"><?php echo $_smarty_tpl->tpl_vars['ss_legal_title']->value;?>
-</h3>
+                            <li id="details_name">
+                                <h3>ФИО</h3>
+                                <h3 class="h3-right">-</h3>
                             </li>
-                            <li>
-                                <h3>Юридический адрес</h3>
-                                <h3 class="h3-right"><?php echo $_smarty_tpl->tpl_vars['ss_legal_address']->value;?>
-</h3>
+                            <li id="details_phone">
+                                <h3>Телефон</h3>
+                                <h3 class="h3-right">-</h3>
                             </li>
-                            <li>
-                                <h3>Почтовый адрес</h3>
-                                <h3 class="h3-right"><?php echo $_smarty_tpl->tpl_vars['ss_address']->value;?>
-</h3>
+                            <li id="details_email">
+                                <h3>Email</h3>
+                                <h3 class="h3-right">Скрыт</h3>
                             </li>
-                            <li>
-                                <h3>ИНН</h3>
-                                <h3 class="h3-right"><?php echo $_smarty_tpl->tpl_vars['ss_legal_inn']->value;?>
-</h3>
+                            <li id="details_samovivoz">
+                                <h3>Способ доставки</h3>
+                                <h3 class="h3-right">-</h3>
                             </li>
-                            <li>
-                                <h3>КПП</h3>
-                                <h3 class="h3-right"><?php echo $_smarty_tpl->tpl_vars['ss_legal_kpp']->value;?>
-</h3>
+							<li id="details_sv">
+							    <h3>Адрес для самовывоза</h3>
+								<h3 class="h3-right"><a href="https://maps.yandex.ru/?text=<?php echo $_smarty_tpl->tpl_vars['ss_samovivoz_address_ru']->value;?>
+" class="underline" target="_blank"><?php echo $_smarty_tpl->tpl_vars['ss_samovivoz_address_ru']->value;?>
+</a></h3>
+							</li>
+                            <li id="details_transport">
+                                <h3>Транспортная компания</h3>
+                                <h3 class="h3-right">-</h3>
                             </li>
-                            <li>
-                                <h3>ОГРН</h3>
-                                <h3 class="h3-right"><?php echo $_smarty_tpl->tpl_vars['ss_legal_ogrn']->value;?>
-</h3>
+                            <li id="details_address">
+                                <h3>Адрес доставки</h3>
+                                <h3 class="h3-right">-</h3>
                             </li>
-                            <li>
-                                <h3>ОКПО</h3>
-                                <h3 class="h3-right"><?php echo $_smarty_tpl->tpl_vars['ss_legal_okpo']->value;?>
-</h3>
-                            </li>
-                            <li>
-                                <h3>Расчетный счет</h3>
-                                <h3 class="h3-right"><?php echo $_smarty_tpl->tpl_vars['ss_legal_check_acc']->value;?>
-</h3>
-                            </li>
-                            <li>
-                                <h3>БИК </h3>
-                                <h3 class="h3-right"><?php echo $_smarty_tpl->tpl_vars['ss_legal_bik']->value;?>
-</h3>
-                            </li>
-                            <li>
-                                <h3>Директор</h3>
-                                <h3 class="h3-right"><?php echo $_smarty_tpl->tpl_vars['ss_director_fio']->value;?>
-</h3>
+                            <li id="details_money">
+                                <h3>Способ оплаты</h3>
+                                <h3 class="h3-right">-</h3>
                             </li>
                         </ul>
                     </div>

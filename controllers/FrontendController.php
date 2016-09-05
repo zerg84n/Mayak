@@ -104,11 +104,14 @@ function frontendAction($smarty) {
 		    $pp = 16;
 			$tru = 'Каталог';
 			$ten = 'Catalogue';
+                       // var_dump($_GET);
+                       // die();
 			if(isset($_GET['key']) && trim(sip($_GET['key'])) != '') {
 			    if(isset($_GET['action']) && trim(sip($_GET['action'])) == 'item') {
 				    $plink = '/'.$controller.'/'.sip($_GET['key']).'/'.sip($_GET['action']).'/'.sip($_GET['id']).'/';
 					$tpl = 'item';
 					$item = q("SELECT * FROM `".sip($_GET['key'])."` WHERE `id`='".sip($_GET['id'])."'");
+                                        
 					$item['data'][0]['description_ru'] = isip($item['data'][0]['description_ru']);
 					$item['data'][0]['description_en'] = isip($item['data'][0]['description_en']);
 					$photos = explode("-", $item['data'][0]['photos']);
@@ -126,7 +129,22 @@ function frontendAction($smarty) {
 						unset($item['data'][0]['price']);
 						$item['data'][0]['price'] = $rostovka;
 					};
+                                        if (isset($item['data'][0]['options'])){
+                                            $options = explode(",", $item['data'][0]['options']);
+                                            $i=1;
+                                            $item['data'][0]['options']=array();
+                                           //Prepare options from string
+                                            foreach ($options as $value) {
+                                                if(!empty($value)){ $item['data'][0]['options']['option'.$i]=$value;
+                                                $i++;}
+
+                                            }
+                                           
+                                            
+                                        }
 					$item['data'][0]['cat'] = sip($_GET['key']);
+                                        //var_dump($item);
+                                        //die();
 					$smarty->assign('good', $item['data'][0]);
 					$smarty->assign('photodir', sip($_GET['key']));
 					$tru .= ' | '.$item['data'][0]['title_ru'];
@@ -499,13 +517,17 @@ function frontendAction($smarty) {
 		case('contacts'):
 			break;
 		case('cart'):
+                    
 		    $cart = json_decode($_COOKIE['cart']);
+                    
 			foreach($cart as $key => $val) {
 			    $item = q("SELECT * FROM `{$val->cat}` WHERE `id`='{$val->id}'", "main");
+                           
 				$cart[$key]->info = $item['data'][0];
 				if(isset($item['data'][0]['rostovka'])) {
 					$rostovka = explode("-",$item['data'][0]['rostovka']);
 					$width = explode("-",$item['data'][0]['width']);
+                                       
 					$cart[$key]->info['rostovka'] = $rostovka[$val->add];
 					$cart[$key]->info['width'] =  $width[$val->add];
 				};
@@ -535,11 +557,13 @@ function frontendAction($smarty) {
 			}
 		    break;
 		case('addtocart'):
+                    
 		    if(isset($_POST['good']) && trim(sip($_POST['good'])) != '') {
 			    $summ = 0;
 				$already = false;
 				$array = array();
 			    $good = json_decode($_POST['good']);
+                         
 				if(isset($_COOKIE['cart']) && trim($_COOKIE['cart']) != '') {
 				    $cart = json_decode($_COOKIE['cart']);
 					foreach($cart as $key => $val) {
@@ -720,6 +744,7 @@ function frontendAction($smarty) {
 						    $goods .= '
                                         Ростовка: '.$val->info['rostovka'].' см<br />
                                         Ширина: '.$val->info['width'].' см<br />
+                                        Опции:  '.$val->info['options'].'<br/>
 							';
 						    break;
 					    case('goods_cat2'):

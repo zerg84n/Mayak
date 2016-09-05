@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2016-08-29 17:16:29
+<?php /* Smarty version Smarty-3.1.6, created on 2016-09-02 16:36:54
          compiled from "../views/frontend\price_modal.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:633456a9f87be5c934-69311540%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'da464450d76ba499fb70e9b1fbb0b2f554bf8556' => 
     array (
       0 => '../views/frontend\\price_modal.tpl',
-      1 => 1472206850,
+      1 => 1472816091,
       2 => 'file',
     ),
   ),

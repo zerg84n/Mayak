@@ -3,6 +3,26 @@ $(window).on('load resize',windowSize);
 $(window).on('load resize',vkg);
 $(document).ready(function() {
 	var loc = document.location.href.split("/");
+        $('#cntup').click(function() {
+            
+             $val=$('#fixprice').val();
+             $cnt = parseInt($('#gcnt').val());
+             $cnt = ($cnt > 99) ? 99 : $cnt+1;
+             $('#gcnt').val($cnt+" шт.");
+             $val = $val*$cnt;
+            $('#goodprice').val($val);
+            return false;
+	});
+	$('#cntdown').click(function() {
+            $val=$('#fixprice').val();
+	    $cnt = parseInt($('#gcnt').val());
+            $cnt = ($cnt < 2) ? 1 : $cnt-1;
+            $('#gcnt').val($cnt+" шт.");
+            $val = $val*$cnt;
+            $('#goodprice').val($val);
+            return false;
+	});
+      
 	if(loc[3] == 'catalogue') {
 		if($.trim(loc[4]) == '') {
 		    $('.indexcatselect .sel-select h5').text($('.indexcatselect .sel-option ul li h4').eq(6).attr('data-txt'));
@@ -69,20 +89,7 @@ $(document).ready(function() {
 	    $('.sel-option',$(this).parent().parent().parent().parent()).slideUp(250);
 		$('#tcc').val($(this).text());
 	});
-	$('#cntup').click(function() {
-	    $('#goodinfo').attr('data-cnt',+$('#goodinfo').attr('data-cnt')+1);
-		$('#gcnt').val($('#goodinfo').attr('data-cnt') + ' ' + $('#gcnt').attr('data-txt'));
-		$('#goodprice').html(parseInt($('#goodinfo').attr('data-price'),10)*parseInt($('#goodinfo').attr('data-cnt'),10));
-		return false;
-	});
-	$('#cntdown').click(function() {
-	    if(+$('#goodinfo').attr('data-cnt') > 1) {
-	        $('#goodinfo').attr('data-cnt',+$('#goodinfo').attr('data-cnt')-1);
-		    $('#gcnt').val($('#goodinfo').attr('data-cnt') + ' ' + $('#gcnt').attr('data-txt'));
-			$('#goodprice').html(parseInt($('#goodinfo').attr('data-price'),10)*parseInt($('#goodinfo').attr('data-cnt'),10));
-		};
-		return false;
-	});
+	
 	$('#cubevol, #squarearea').change(function() {
 	    $('#goodinfo').attr('data-price',parseInt($(this).attr('data-price'),10)*parseInt($(this).val(),10));
 		$('#goodprice').html(parseInt($('#goodinfo').attr('data-price'),10)*parseInt($('#goodinfo').attr('data-cnt'),10));
@@ -131,11 +138,12 @@ $(document).ready(function() {
 		$('#gsize').keyup(function() {$.trim($(this).val()).length > 3 ? $('#addtocartbutton').css('background-color', '#555c99').prop('disabled',false) : $('#addtocartbutton').css('background-color', '#888fcc').prop('disabled',true);});
 	};
 	$('#addtocatform').submit(function(event) {
+           // alert('add');
 	    event.preventDefault();
 		var params = {
 		    id: +$('#goodid').val(),
             cat: loc[4],
-            summ: +$('#goodprice').text(),
+            summ: +$('#goodprice').val(),
             cnt: +$('#gcnt').val().replace(/[^0-9]/gim, ''),
 			price: 0,
 			add: ''
@@ -143,7 +151,9 @@ $(document).ready(function() {
         params.price = params.summ/params.cnt;
 		switch(params.cat) {
 		    case('goods_cat1'):
-			    params.add = $('#goodinfo').attr('data-rostid');
+                           
+			    params.add = $('#goodinfo').val();
+                            params.options = $('#options').val();
 			    break;
 		    case('goods_cat2'):
 				params.add = $('#gsize').val();
@@ -251,6 +261,7 @@ function sendit(fm) {
 			if(!ok) break;
 	    }
 	};
+        console.log(params);
 	if(ok && m) {
 	    $.ajax({
 		    type: 'POST',
