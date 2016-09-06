@@ -34,6 +34,7 @@
 				    					   {if $good->cat == 'goods_cat1'}
 				    					       <h3>Ростовка: {$good->info.rostovka} см</h3>
 				    						   <h3>Ширина: {$good->info.width} см</h3>
+                                                                                  <h3>Опции: {$good->info.options}</h3> 
 				    					   {/if}
 				    					   {if $good->cat == 'goods_cat2'}
 				    					       <h3>Размер: {$good->add}</h3>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2016-09-05 23:23:45
+<?php /* Smarty version Smarty-3.1.6, created on 2016-08-29 17:21:45
          compiled from "../views/frontend\item.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:15619567a9c7b0991b4-06017932%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '478efe1e31930db22c14128ca36184156ba2fc8e' => 
     array (
       0 => '../views/frontend\\item.tpl',
-      1 => 1473099724,
+      1 => 1472206848,
       2 => 'file',
     ),
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'good' => 0,
     'photodir' => 0,
     'photo' => 0,
-    'templateWebPath' => 0,
     'key' => 0,
     'r' => 0,
+    'templateWebPath' => 0,
     'similar' => 0,
     'cur_cat' => 0,
     'sim' => 0,
@@ -89,6 +89,86 @@ $_smarty_tpl->tpl_vars['photo']->_loop = true;
 					<?php }?>
 				</div>
                 <form id="addtocatform">
+                    <input id="goodid" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['good']->value['id'];?>
+" />
+                     <input id="fixprice" disable type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['good']->value['price'][0];?>
+" />
+                    <div class="topic-settings">
+                        <div class="rostovka">
+                            <h2>Ростовка:</h2>
+                            <select class="rost-sel" id="goodinfo" >
+                                <?php  $_smarty_tpl->tpl_vars['r'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['r']->_loop = false;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['good']->value['rostovka']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['r']->index=-1;
+foreach ($_from as $_smarty_tpl->tpl_vars['r']->key => $_smarty_tpl->tpl_vars['r']->value){
+$_smarty_tpl->tpl_vars['r']->_loop = true;
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['r']->key;
+ $_smarty_tpl->tpl_vars['r']->index++;
+?>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['r']->index;?>
+" data-rostid=" <?php echo $_smarty_tpl->tpl_vars['key']->value;?>
+" data-txt="<?php echo $_smarty_tpl->tpl_vars['r']->value;?>
+см" data-rostovka="<?php echo $_smarty_tpl->tpl_vars['r']->value;?>
+" data-width="<?php echo $_smarty_tpl->tpl_vars['good']->value['width'][$_smarty_tpl->tpl_vars['key']->value];?>
+" data-price="<?php echo $_smarty_tpl->tpl_vars['good']->value['price'][$_smarty_tpl->tpl_vars['key']->value];?>
+"><?php echo $_smarty_tpl->tpl_vars['r']->value;?>
+см
+                                    </option>
+                                <?php } ?>   
+                            </select>
+                        </div>
+                        <div class="width">
+                            <h2>Ширина:</h2>
+                            <input id="goodwidth" type="text" value="<?php echo $_smarty_tpl->tpl_vars['good']->value['width'][0];?>
+см" class="width" readonly>
+                        </div>
+                        <div class="material">
+                            <h2>Опции:</h2>
+                            <select id="options" class="rost-sel">
+                                
+                                <?php  $_smarty_tpl->tpl_vars['r'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['r']->_loop = false;
+ $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
+ $_from = $_smarty_tpl->tpl_vars['good']->value['options']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['r']->index=-1;
+foreach ($_from as $_smarty_tpl->tpl_vars['r']->key => $_smarty_tpl->tpl_vars['r']->value){
+$_smarty_tpl->tpl_vars['r']->_loop = true;
+ $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['r']->key;
+ $_smarty_tpl->tpl_vars['r']->index++;
+?>
+                                    <option value="<?php echo $_smarty_tpl->tpl_vars['r']->value;?>
+"><?php echo $_smarty_tpl->tpl_vars['r']->value;?>
+</option>
+                                <?php } ?>   
+                                
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="topic-buy row">
+                        <div class="col-md-7 col-xs-12">
+                            <input type="text" id="goodprice" readonly class="topic-cost" value="<?php if ($_smarty_tpl->tpl_vars['good']->value['cat']=='goods_cat1'){?><?php echo $_smarty_tpl->tpl_vars['good']->value['price'][0];?>
+<?php }else{ ?><?php echo $_smarty_tpl->tpl_vars['good']->value['price'];?>
+<?php }?>">
+                            <h4>за</h4>
+                            <div class="amount">
+                                <?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?><input id="gcnt" type="text" value="1 шт." data-txt="шт." disabled><?php }else{ ?><input id="gcnt" type="text" value="1 p." data-txt="p." disabled><?php }?>
+                                <input id="cntup" type="button" class="up">
+                                <input id="cntdown" type="button" class="down">
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-xs-12">
+						    <?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?><input id="added" style="display: none; opacity: 0.0; color: #00AA00; background: transparent; float: right; margin-top: -40px;" type="button" value="Добавлено!" class="topic-btn" disabled><?php }else{ ?><input id="added" style="display: none; opacity: 0.0; color: #00AA00; background: transparent; float: right; margin-top: -40px;" type="button" value="Added!" class="topic-btn" disabled><?php }?>
+                            <?php if ($_smarty_tpl->tpl_vars['lang']->value=='ru'){?><input id="addtocartbutton" type="submit" value="В корзину" class="topic-btn"><?php }else{ ?><input id="addtocartbutton" type="submit" value="Add to cart" class="topic-btn"><?php }?>
+                        </div>
+                    </div>
+                </form>
+				
+    
+              
+    <!--  
+               
+                <form id="addtocatform">
 				    <input id="goodid" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['good']->value['id'];?>
 " />
 				    <?php if ($_smarty_tpl->tpl_vars['good']->value['cat']=='goods_cat1'){?>
@@ -110,9 +190,11 @@ images/sel3.png" alt="">
 							    			    <?php  $_smarty_tpl->tpl_vars['r'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['r']->_loop = false;
  $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
  $_from = $_smarty_tpl->tpl_vars['good']->value['rostovka']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['r']->index=-1;
 foreach ($_from as $_smarty_tpl->tpl_vars['r']->key => $_smarty_tpl->tpl_vars['r']->value){
 $_smarty_tpl->tpl_vars['r']->_loop = true;
  $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['r']->key;
+ $_smarty_tpl->tpl_vars['r']->index++;
 ?>
                                                     <li>
                                                         <h4 data-rostid="<?php echo $_smarty_tpl->tpl_vars['key']->value;?>
@@ -143,9 +225,11 @@ images/sel3.png" alt="">
 							    			    <?php  $_smarty_tpl->tpl_vars['r'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['r']->_loop = false;
  $_smarty_tpl->tpl_vars['key'] = new Smarty_Variable;
  $_from = $_smarty_tpl->tpl_vars['good']->value['rostovka']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_smarty_tpl->tpl_vars['r']->index=-1;
 foreach ($_from as $_smarty_tpl->tpl_vars['r']->key => $_smarty_tpl->tpl_vars['r']->value){
 $_smarty_tpl->tpl_vars['r']->_loop = true;
  $_smarty_tpl->tpl_vars['key']->value = $_smarty_tpl->tpl_vars['r']->key;
+ $_smarty_tpl->tpl_vars['r']->index++;
 ?>
                                                     <li>
                                                         <h4 data-txt="<?php echo $_smarty_tpl->tpl_vars['r']->value;?>
@@ -257,6 +341,8 @@ l<?php }?></h2>
                         </div>
                     </div>
                 </form>
+                
+    -->
 
                 <hr class="hr-dashed">
 

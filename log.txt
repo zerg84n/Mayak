@@ -1,0 +1,43 @@
+commit dadc270eae5f02c87cc7818df92bcfad389d5b0a
+Author: zerg84n <zerg84n@gmail.com>
+Date:   Wed Aug 31 14:40:17 2016 +0500
+
+    for testing
+
+commit a441dd79517a0bf530a201c4456131e08992fd86
+Author: zerg84n <zerg84n@gmail.com>
+Date:   Tue Aug 30 21:14:04 2016 +0500
+
+    Revert "add in js"
+    
+    This reverts commit 5cf68715b5c81599ed4927969a8b563d780da5a5.
+
+commit 5cf68715b5c81599ed4927969a8b563d780da5a5
+Author: zerg84n <zerg84n@gmail.com>
+Date:   Tue Aug 30 21:12:49 2016 +0500
+
+    add in js
+
+commit 2462e402c1ed876e3d0e0c81955aba6ee2703e17
+Author: zerg84n <zerg84n@gmail.com>
+Date:   Tue Aug 30 18:23:47 2016 +0500
+
+    2 day
+
+commit a3ffdf90dd97f03be4f47558cb6fb0628ad0c735
+Author: zerg84n <zerg84n@gmail.com>
+Date:   Tue Aug 30 18:15:25 2016 +0500
+
+    2 day
+
+commit 7f5dc623e99c98a62af48d35114d7dea63d79aa2
+Author: zerg84n <zerg84n@gmail.com>
+Date:   Mon Aug 29 17:14:19 2016 +0500
+
+    change db conf
+
+commit 61f50c8bff7324dc0aa013d4a98244bed6a63ee4
+Author: zerg84n <zerg84n@gmail.com>
+Date:   Mon Aug 29 17:06:36 2016 +0500
+
+    first

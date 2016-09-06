@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.6, created on 2016-09-05 23:23:45
+<?php /* Smarty version Smarty-3.1.6, created on 2016-08-29 17:16:29
          compiled from "../views/frontend\index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:28426563626d4c37243-24751857%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (

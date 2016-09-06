@@ -36,56 +36,6 @@
 					{/if}
 				</div>
                 <form id="addtocatform">
-                    <input id="goodid" type="hidden" value="{$good.id}" />
-                     <input id="fixprice" disable type="hidden" value="{$good.price[0]}" />
-                    <div class="topic-settings">
-                        <div class="rostovka">
-                            <h2>Ростовка:</h2>
-                            <select class="rost-sel" id="goodinfo" >
-                                {foreach from=$good.rostovka key=key item=r}
-                                    <option value="{$r@index}" data-rostid=" {$key}" data-txt="{$r}см" data-rostovka="{$r}" data-width="{$good.width[$key]}" data-price="{$good.price[$key]}">{$r}см
-                                    </option>
-                                {/foreach}   
-                            </select>
-                        </div>
-                        <div class="width">
-                            <h2>Ширина:</h2>
-                            <input id="goodwidth" type="text" value="{$good.width[0]}см" class="width" readonly>
-                        </div>
-                        <div class="material">
-                            <h2>Опции:</h2>
-                            <select id="options" class="rost-sel">
-                                
-                                {foreach from=$good.options key=key item=r}
-                                    <option value="{$r}">{$r}</option>
-                                {/foreach}   
-                                
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="topic-buy row">
-                        <div class="col-md-7 col-xs-12">
-                            <input type="text" id="goodprice" readonly class="topic-cost" value="{if $good.cat == 'goods_cat1'}{$good.price[0]}{else}{$good.price}{/if}">
-                            <h4>за</h4>
-                            <div class="amount">
-                                {if $lang == 'ru'}<input id="gcnt" type="text" value="1 шт." data-txt="шт." disabled>{else}<input id="gcnt" type="text" value="1 p." data-txt="p." disabled>{/if}
-                                <input id="cntup" type="button" class="up">
-                                <input id="cntdown" type="button" class="down">
-                            </div>
-                        </div>
-                        <div class="col-md-5 col-xs-12">
-						    {if $lang == 'ru'}<input id="added" style="display: none; opacity: 0.0; color: #00AA00; background: transparent; float: right; margin-top: -40px;" type="button" value="Добавлено!" class="topic-btn" disabled>{else}<input id="added" style="display: none; opacity: 0.0; color: #00AA00; background: transparent; float: right; margin-top: -40px;" type="button" value="Added!" class="topic-btn" disabled>{/if}
-                            {if $lang == 'ru'}<input id="addtocartbutton" type="submit" value="В корзину" class="topic-btn">{else}<input id="addtocartbutton" type="submit" value="Add to cart" class="topic-btn">{/if}
-                        </div>
-                    </div>
-                </form>
-				
-    
-              
-    <!--  
-               
-                <form id="addtocatform">
 				    <input id="goodid" type="hidden" value="{$good.id}" />
 				    {if $good.cat == 'goods_cat1'}
                         <div class="topic-settings">
@@ -204,8 +154,6 @@
                         </div>
                     </div>
                 </form>
-                
-    -->
 
                 <hr class="hr-dashed">
 
