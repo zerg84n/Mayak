@@ -60,7 +60,7 @@ function frontendAction($smarty) {
 			$arr2 = array();
 			$k = 0;
 			for($i = 1; $i <= 6; $i++) {
-			    $arr2[($i-1)] = q("SELECT * FROM `goods_cat{$i}` ORDER BY `id` DESC", "main");
+			    $arr2[($i-1)] = q("SELECT * FROM `goods_cat{$i}` ORDER BY `order` ASC, `id` DESC", "main");
 				foreach($arr2[($i-1)]['data'] as $key => $val) {
 				    $arr2[($i-1)]['data'][$key]['good_cat'] = 'goods_cat'.$i;
 					$pr = explode("-", $val['price']);
@@ -183,7 +183,7 @@ function frontendAction($smarty) {
 				$arr2 = array();
 				$scnt = 0;
 			    for($i = 1; $i <= 6; $i++) {
-			        $arr2[($i-1)] = q("SELECT * FROM `goods_cat{$i}` ORDER BY `id` DESC", "main");
+			        $arr2[($i-1)] =q("SELECT * FROM `goods_cat{$i}` ORDER BY `order` ASC", "main");
 					$scnt += count($arr2[($i-1)]['data']);
 			    	foreach($arr2[($i-1)]['data'] as $key => $val) {
 			    	    $arr2[($i-1)]['data'][$key]['good_cat'] = 'goods_cat'.$i;

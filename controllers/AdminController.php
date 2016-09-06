@@ -35,6 +35,7 @@ function indexAction($smarty) {
  * @param object $smarty Объект шаблонизатора
  */
 function adminpageAction($smarty) {
+    
 	$pages = array(
 	    'news' => 'Новости',
 		'articles' => 'Статьи',
@@ -48,7 +49,8 @@ function adminpageAction($smarty) {
 		'newtable' => 'Новая таблица',
 		'orders' => 'Заказы',
 		'opts' => 'Оптовики',
-		'transport' => 'Транспортные компании'
+		'transport' => 'Транспортные компании',
+                //'seo'=>'Порядок товаров'
 	);
 	$goods = array(
         'goods_cat1' => 'Лыжи и сопутствующие товары',
@@ -90,7 +92,9 @@ function adminpageAction($smarty) {
 				}
 			};
 		}
-		$smarty->assign('title', $title);
+               // echo $tpl;
+              //  die();
+            $smarty->assign('title', $title);
 	    $smarty->assign(sip($_GET['action']), $content);
 	    $smarty->assign('pages', $pages);
 	    $smarty->assign('modal', file_get_contents('../views/admin/'.$modal.'/form.tpl'));
@@ -130,20 +134,30 @@ function exitAction($smarty) {
  * @param object $smarty Объект шаблонизатора
  */
 function ajaxAction($smarty) {
+                 
 	if(isset($_POST) && !empty($_POST) && trim($_POST['action']) != '' && (trim(sip($_POST['action'])) == 'login' || $_SESSION['admin']['auth'])) {
-		foreach($_POST as $key => $val) {
+            if ($_POST['sorted']) $sorted=$_POST['sorted'];
+            foreach($_POST as $key => $val) {
 			(sip($key) == 'description_ru' || sip($key) == 'description_en') ? $data[$key] = $val : $data[$key] = sip($val);
 			if(sip($key) == 'password' && sip($_POST['table']) == 'users') $data[$key] = md5(md5(sip($val)).'123');
 		}
 		$action = explode("-", $data['action']);
 		count($action) == 1 ? $act = $data['action'] : $act = $action[0];
 		unset($data['action']);
+                 
 		switch($act) {
 			case('login'):
 			    $result = login($data);
 				break;
 			case('item'):
 				$result = item($data, $action[1]);
+				break;
+                        case('reorder'):
+                                if (update_order($sorted,'goods_cat1')) {
+                                    $result = 'success';  } 
+                                    else{
+                                     $result = 'error';    
+                                    }
 				break;
 		}
 		echo $result;
@@ -162,6 +176,9 @@ function ajaxAction($smarty) {
  * @param object $smarty Объект шаблонизатора
  */
 function settingsAction($smarty) {
+    
+    if ($_GET['key']=='order') { seoAction($smarty);      return;}
+
 	if($_SESSION['admin']['auth']) {
 		$arr = array(
 		    'xlsfiz' => array('title' => '.xls для физ.лиц', 'filename' => 'fiz.xls', 'status' => ''),
@@ -176,6 +193,23 @@ function settingsAction($smarty) {
 	    loadTemplate($smarty, 'settings');
 	    loadTemplate($smarty, 'footer');
 		garbageImage();
+	} else {
+		echo '<script>document.location.href = "/admin/login/";</script>';
+	}
+}
+function seoAction($smarty) {
+    
+	if($_SESSION['admin']['auth']) {
+            isset($_GET['id']) && (int)sip($_GET['id']) > 0 ? $p = (int)sip($_GET['id']) : $p = 1;
+            $tbl='goods_cat1';
+            $content = content($tbl, $p);
+             $smarty->assign('good_cat', $tbl);
+            $smarty->assign('items', $content);
+	    $smarty->assign('title', 'Порядок товаров');
+	    loadTemplate($smarty, 'header');
+	    loadTemplate($smarty, 'seo/main');
+	    loadTemplate($smarty, 'footer');
+		
 	} else {
 		echo '<script>document.location.href = "/admin/login/";</script>';
 	}

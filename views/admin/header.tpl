@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>{$ss_sitename} | Административная панель | {$title}</title>
-
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <!-- Bootstrap Core CSS -->
     <link href="{$templateAdminWebPath}bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -36,6 +36,10 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+      <style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: auto; }
+  #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left;  font-size: 4em; text-align: center; }
+  </style>
 
 </head>
 

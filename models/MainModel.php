@@ -57,7 +57,12 @@ function site_settings($smarty, $controllerName, $actionName) {
  */
 function fcontent($tbl, $pp=3, $p=1, $add="", $db="main") {
 	$start = ((int)$p * (int)$pp) - (int)$pp;
-	$content = q("SELECT * FROM `{$tbl}`{$add} ORDER BY `id` DESC LIMIT {$start},{$pp}", $db);
+        $order='id';
+        $desc='';
+        
+         if ($tbl=='goods_cat1') {$order = 'order'; $desc='ASC';}
+         
+	$content = q("SELECT * FROM `{$tbl}`{$add} ORDER BY `{$order}` {$desc} LIMIT {$start},{$pp}", $db);
 	foreach($content['data'] as $key => $val) {
 		if(isset($val['description_ru']) || isset($val['description_en'])) {
 			$content['data'][$key]['small_description_ru'] = croptext($val['description_ru'], 400);
@@ -81,6 +86,7 @@ function fcontent($tbl, $pp=3, $p=1, $add="", $db="main") {
  * @return array $pages Массив с информацией
  */
 function fpages($tbl, $pp=3, $p=1, $add = "", $db="main") {
+    
 	$allitems = q("SELECT * FROM `{$tbl}`{$add} ORDER BY `id` DESC", $db);
 	$all = (int)$allitems['count'];
 	$all%$pp == 0 ? $allpages = $all/$pp : $allpages = (($all-($all%$pp))/$pp) + 1;

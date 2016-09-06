@@ -624,6 +624,21 @@ function showalert(elem) {
 	elem.slideDown(250).animate({'opacity': 1.0},250);
 	setTimeout(function() {elem.animate({'opacity': 0.7},250).slideUp(250);},1500);
 }
+function save_order() {
+	var sorted = $( "#sortable" ).sortable( "toArray" );
+       // var sorted = $( "#sortable" ).sortable( "serialize", { key: "foo" } );
+		console.log(sorted);
+                
+             $.ajax({
+    	type: 'POST',
+    	url: '/admin/ajax/',
+    	data: {sorted:sorted,action:'reorder'},
+    	success: function(data) {
+            console.log(data);
+    	}
+    });   
+                
+  }
 
 function go_ajax(params, form) {
     var loc = window.location.href.split("/"), tbl = '';

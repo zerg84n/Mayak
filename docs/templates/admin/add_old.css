@@ -154,28 +154,3 @@
     margin-right: -30px !important;
 	margin-top: 30px;
 }
-.object h2{
-    color:#333;
-    font-size: 14px;
-text-align: center;
-}
-.object h2 a{
-    color:inherit;
-}
-.object{
-    height: 200px;
-    padding:5px 10px;
-    background: #fff;
-    border:1px solid #ddd;
-    border-radius: 5px;
-}
-.panel-body .ui-state-default{
-    border: none;
-    background: transparent;
-    color:inherit;
-}
-.object img{
-    display:block;
-    margin:0 auto;
-    margin-bottom:20px;
-}

@@ -230,6 +230,12 @@ function item($data, $action) {
 	}
 	return $result['status'];
 }
+function update_order($sorted,$tbl){
+    foreach($sorted as $key=>$value) {
+       q("UPDATE `{$tbl}` SET `order`='{$key}' WHERE `id`='{$value}'", "main"); 
+    }
+    return true;
+}
 
 /**
  * Выбираем контент для показа в таблице
@@ -243,6 +249,7 @@ function content($tbl, $p=1, $db="main") {
 	$start = ((int)$p * (int)$perpage['data'][0]['value']) - (int)$perpage['data'][0]['value'];
 	($tbl == 'menu' || $tbl == 'slider') ? $desc = '' : $desc = 'DESC';
 	($tbl == 'menu' || $tbl == 'slider') ? $order = 'pos' : $order = 'id';
+        if ($tbl=='goods_cat1') {$order = 'order'; $desc='ASC';}
 	$content = q("SELECT * FROM `{$tbl}` ORDER BY `{$order}` {$desc} LIMIT {$start},{$perpage['data'][0]['value']}", $db);
 	foreach($content['data'] as $key => $val) {
 		if(isset($val['description'])) {
