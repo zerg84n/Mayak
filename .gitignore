@@ -1,2 +1,3 @@
 /nbproject/private/
-/core/tmp/
+core/tmp/*
+*.tpl.php
