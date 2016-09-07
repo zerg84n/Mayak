@@ -16,6 +16,7 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
+                           <font color="red"> Нажмите "Сохранить", чтобы сохранить порядок товаров.</font>
                             <ul id="sortable">
                                 {foreach from=$items item=item}  
                                 <li id="{$item.id}"  class="ui-state-default col-lg-3" style="margin:10px 0; padding:0 15px;">
@@ -29,7 +30,7 @@
                         </div> 
                     </div>
                     <div class="col-lg-12" style="text-align: center; margin-bottom: 50px;">
-                        <button type="submit" class="btn btn-default" onclick="save_order()" style="margin-bottom: 15px;">Применить</button>
+                        <button type="submit" class="btn btn-default" onclick="save_order()" style="margin-bottom: 15px;">Сохранить</button>
                         <div class="alert alert-success alert_success">Настройки применены!</div>
                         <div class="alert alert-danger alert_error">Неверно заполнена форма!</div>
                     </div>

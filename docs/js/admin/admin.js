@@ -627,14 +627,15 @@ function showalert(elem) {
 function save_order() {
 	var sorted = $( "#sortable" ).sortable( "toArray" );
        // var sorted = $( "#sortable" ).sortable( "serialize", { key: "foo" } );
-		console.log(sorted);
+		//console.log(sorted);
                 
              $.ajax({
     	type: 'POST',
     	url: '/admin/ajax/',
     	data: {sorted:sorted,action:'reorder'},
     	success: function(data) {
-            console.log(data);
+           // console.log(data);
+          alert('Изменения сохранены!');
     	}
     });   
                 
